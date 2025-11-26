@@ -1,0 +1,59 @@
+import React from 'react';
+import { ArrowRight, Play } from 'lucide-react';
+import EiffelTowerBg from './EiffelTowerBg';
+
+const Hero: React.FC = () => {
+  return (
+    <div className="relative bg-[#013D2F] rounded-[48px] overflow-hidden min-h-[600px] lg:min-h-[720px] flex items-center">
+      
+      {/* Background decoration: Eiffel Tower outline */}
+      <div className="absolute left-10 bottom-0 opacity-[0.08] pointer-events-none w-[350px] md:w-[450px] text-white z-0">
+        <EiffelTowerBg />
+      </div>
+
+      {/* Lime green decorative circle on the right edge */}
+      <div className="absolute -right-[10%] bottom-[-10%] w-[500px] h-[500px] bg-[#84cc16] rounded-full z-0"></div>
+
+      <div className="w-full h-full relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center px-8 md:px-16 py-16">
+        
+        {/* Left Content */}
+        <div className="space-y-10 max-w-2xl relative z-10">
+          <h1 className="text-5xl md:text-6xl lg:text-[80px] font-bold text-white leading-[1.1] tracking-tight">
+            Visa Made Easy <br />
+            Dreams Made <br />
+            Possible
+          </h1>
+          
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-8">
+            <button className="group flex items-center gap-3 px-9 py-4 rounded-full border border-white/40 text-white font-semibold hover:bg-white hover:text-[#013D2F] transition-all duration-300">
+              Read More
+              <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+            </button>
+            
+            <button className="flex items-center gap-4 group cursor-pointer">
+              <div className="w-14 h-14 bg-[#0A4F3F] rounded-full flex items-center justify-center group-hover:bg-[#84cc16] transition-colors duration-300 shadow-lg border border-white/10">
+                <Play size={20} className="text-white fill-white ml-1" />
+              </div>
+              <span className="text-white font-medium text-lg">Watch Our Videos</span>
+            </button>
+          </div>
+        </div>
+
+        {/* Right Content - Image */}
+        <div className="relative w-full h-full flex items-center justify-center lg:justify-end">
+            <div className="w-full max-w-lg aspect-[4/5] relative z-10 rounded-2xl overflow-hidden shadow-2xl border-[8px] border-white/10">
+                <img 
+                  src="https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?q=80&w=2940&auto=format&fit=crop" 
+                  alt="Happy traveler in Paris" 
+                  className="w-full h-full object-cover"
+                />
+                {/* Overlay gradient */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#013D2F]/40 to-transparent"></div>
+            </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Hero;
